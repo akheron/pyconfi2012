@@ -7,29 +7,130 @@ CPython Sprint
 
 PyCon Finland 2012
 
-http://piratepad.net/pyconfi-sprint/
+http://piratepad.net/pyconfi-sprint
+
+
+Workflow
+--------
+
+Get the code
+
+Find something to work on
+
+Make a patch
+
+Post to issue tracker
+
+Wait for a review
+
+
+Workflow
+--------
+
+**Get the code**
+
+Find something to work on
+
+Make a patch
+
+Post to issue tracker
+
+Wait for a review
 
 
 Get the code
 ------------
 
-``hg clone hg://hg.python.org/cpython``
+You already did this yesterday, right? :)
+
+``hg clone http://hg.python.org/cpython``
 
 ``cd cpython``
 
-``./configure --with-pydebug``
+``./configure --with-pydebug && make -j2``
 
-``make -j2``
+``./python``
+
+(``git clone git://github.com/akheron/cpython.git``)
+
+
+Build the documentation
+-----------------------
+
+``make -C Doc html``
+
+open ``Doc/build/html/index.html``
+
+
+
+Workflow
+--------
+
+Get the code
+
+**Find something to work on**
+
+Make a patch
+
+Post to issue tracker
+
+Wait for a review
+
+
+Create a tracker account
+------------------------
+
+You already did this yesterday too, right? :)
+
+http://bugs.python.org/
+
+
+Sign the contributor agreement
+------------------------------
+
+The PSF is asking all past and future contributors to sign a
+Contributor Agreement.
+
+Initial license --> The Python License
+
+
+Find something to work on
+-------------------------
+
+http://piratepad.net/pyconfi-sprint-issues
+
+http://bugs.python.org/ --> *Easy issues*
+
+Interesting modules
+
+
+Workflow
+--------
+
+Get the code
+
+Find something to work on
+
+**Make a patch**
+
+Post to issue tracker
+
+Wait for a review
 
 
 Versions & branches
 -------------------
 
-Newest version: Python 3.3 (October 2012)
+Newest version: Python 3.3 (released on Oct 2012)
 
-Bugfixes -> **2.7, 3.3, 3.4**
+Bugfixes -> **2.7, 3.3, default**
 
-New features -> **3.4** (default)
+New features -> **default**
+
+**default** will eventually become 3.4
+
+*(3.2 is actually also still open for bug fixes until 3.2.4 is
+released)*
 
 
 Versions & branches
@@ -37,7 +138,7 @@ Versions & branches
 
 Make a patch against the oldest version first!
 
-(We'll merge or copy it to newer branches.)
+(The committer will merge it to the other branches.)
 
 Use ``hg up 2.7`` to change to 2.7 branch
 
@@ -59,8 +160,8 @@ What's where?
 ``Misc/`` - Ohter files, e.g. ``Misc/NEWS`` & ``Misc/ACKS``
 
 
-Misc/ACKS
----------
+Sidenote: Misc/ACKS
+-------------------
 
 All contributors are listed here.
 
@@ -69,15 +170,24 @@ All contributors are listed here.
 See http://hg.python.org/cpython/file/default/Misc/ACKS
 
 
-Find something to work on
--------------------------
+Running the tests
+-----------------
 
-Suggestions: http://piratepad.net/pyconfi-sprint-issues
+``./python -m test [-v] [test_name]``
 
-Issue tracker: http://bugs.python.org/
+e.g.
 
--> *Easy issues* to get a list of easier ones
+``./python -m test``
 
+``./python -m test -v test_string``
+
+
+Running the tests
+-----------------
+
+On 2.7 you do
+
+``./python -m test.regrtest [-v] [test_name]``
 
 
 Working with patches
@@ -88,14 +198,47 @@ Create: ``hg diff > issueXXXXX.patch``
 Apply: ``patch -p1 < issueXXXXX.patch``
 
 
-Thank you
----------
+Workflow
+--------
 
-Ask me if you want to try it! :-)
+Get the code
 
-Btw, the God's number is 20.
+Find something to work on
 
-30 years of mathematical theory and 35 CPU-years of idle computer time
-donated by Google to solve this.
+Make a patch
 
-Typical speedsolves use 40-50 moves.
+**Post to issue tracker**
+
+Wait for a review
+
+
+Issue tracker
+-------------
+
+http://bugs.python.org/issueXXXXX
+
+``issueXXXXX.patch`` (or whatever)
+
+
+Workflow
+--------
+
+Get the code
+
+Find something to work on
+
+Make a patch
+
+Post to issue tracker
+
+**Wait for a review**
+
+
+Wait for a review
+-----------------
+
+Ping me or Ezio!
+
+.. image:: petri_lehtinen.jpg
+
+.. image:: ezio_melotti.jpg
